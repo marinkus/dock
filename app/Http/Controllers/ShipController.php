@@ -79,6 +79,7 @@ class ShipController extends Controller
             'title' => $request->title,
             'country' => $request->country
             ]);
+        return redirect()->route('ship_index')->with('msg', 'Ship updated!');
     }
 
     /**
