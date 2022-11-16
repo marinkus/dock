@@ -15,4 +15,6 @@ class Ship extends Model
         3 => 'Cruise',
         4 => 'Fishing'
     ];
+
+    protected $fillable = ['title', 'country'];
 }
