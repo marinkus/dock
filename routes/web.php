@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShipController as Ship;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes(['register' => false]);
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('ship')->name('ship_')->group(function () {
+    Route::get('/', [Ship::class, 'index'])->name('index');
+    Route::get('/create', [Ship::class, 'create'])->name('create');
+    Route::post('/create', [Ship::class, 'store'])->name('store');
+    Route::get('/show/{restaurant}', [Ship::class, 'show'])->name('show');
+    Route::delete('/delete/{restaurant}', [Ship::class, 'destroy'])->name('delete');
+    Route::get('/edit/{restaurant}', [Ship::class, 'edit'])->name('edit');
+    Route::put('/edit/{restaurant}', [Ship::class, 'update'])->name('update');
+});
