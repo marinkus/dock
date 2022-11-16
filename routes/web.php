@@ -25,8 +25,8 @@ Route::prefix('ship')->name('ship_')->group(function () {
     Route::get('/', [Ship::class, 'index'])->name('index');
     Route::get('/create', [Ship::class, 'create'])->name('create');
     Route::post('/create', [Ship::class, 'store'])->name('store');
-    Route::get('/show/{restaurant}', [Ship::class, 'show'])->name('show');
-    Route::delete('/delete/{restaurant}', [Ship::class, 'destroy'])->name('delete');
-    Route::get('/edit/{restaurant}', [Ship::class, 'edit'])->name('edit');
-    Route::put('/edit/{restaurant}', [Ship::class, 'update'])->name('update');
+    Route::get('/show/{ship}', [Ship::class, 'show'])->name('show');
+    Route::delete('/delete/{ship}', [Ship::class, 'destroy'])->name('delete');
+    Route::get('/edit/{ship}', [Ship::class, 'edit'])->name('edit');
+    Route::put('/edit/{ship}', [Ship::class, 'update'])->name('update');
 });
