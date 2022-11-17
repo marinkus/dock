@@ -83,6 +83,10 @@
                                         ships</a>
                                     <a class="dropdown-item" href="{{ route('ship_create') }}"> Create ship
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('cargo_index') }}"> List of
+                                        cargos</a>
+                                    <a class="dropdown-item" href="{{ route('cargo_create') }}"> Create cargo
+                                    </a>
                                 </div>
                             </li>
                         @endguest

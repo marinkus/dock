@@ -27,7 +27,7 @@
                     <div class="mb-3">
                         <span class="input-group-text">Ship</span>
                         <select value="{{ old('ship_id') }}" name="ship_id" class="form-select">
-                            <option selected>Open this select menu</option>
+                            <option value="0" selected>Open this select menu</option>
                             @foreach ($ships as $ship)
                                 <option value="{{ $ship->id }}" @if ($ship->id == old('ship_id')) selected @endif>
                                     {{ $ship->title }}</option>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="mb-3">
                         <span class="input-group-text">Add image</span>
-                        <input type="file" class="form-control" name="image[]" multiple>
+                        <input type="file" class="form-control" name="image">
                     </div>
                     <button type="submit" class="btn btn-primary mt-4">Create</button>
                 </form>

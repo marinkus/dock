@@ -51,7 +51,7 @@ class CargoController extends Controller
 
             $file = $name . '-' . rand(100000, 999999) . '.' . $ext;
 
-            $Image = Image::make($image)->resize(100, 100);
+            $Image = Image::make($image)->resize(350, 350);
 
             $Image->save(public_path() . '/cargos/' . $file);
 
