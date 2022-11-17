@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Cargo;
 
 class Ship extends Model
 {
@@ -17,4 +18,8 @@ class Ship extends Model
     ];
 
     protected $fillable = ['title', 'country'];
+
+    public function getCargos() {
+        return $this->hasMany(Cargo::class, 'ship_id','id');
+    }
 }

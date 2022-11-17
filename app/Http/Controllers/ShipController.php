@@ -15,7 +15,10 @@ class ShipController extends Controller
     public function index()
     {
         $ships = Ship::all();
-        return view('ship.index', ['ships' => $ships]);
+        return view('ship.index', [
+            'ships' => $ships,
+            'type' => Ship::TYPE
+        ]);
     }
 
     /**
@@ -52,7 +55,10 @@ class ShipController extends Controller
      */
     public function show(Ship $ship)
     {
-        return view('ship.show', ['ship' => $ship]);
+        return view('ship.show', [
+            'ship' => $ship,
+            'type' => Ship::TYPE
+        ]);
     }
 
     /**

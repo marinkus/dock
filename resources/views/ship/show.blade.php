@@ -4,12 +4,24 @@
     <div class="container">
         <div class="row">
 
-            @forelse($ships as $ship)
                 <div class="col-3 form-div mt-2">
-                    <h3 class="heading"><a href="{{ route('ship_show', $ship) }}">{{ $ship->title }}</a></h3>
+                    <h3 class="heading">{{ $ship->title }}</h3>
                     <p class="description">Country of registration{{ $ship->country }}</p>
                     <p>Registered at: {{ $ship->created_at }}</p>
                     <p>Type: {{ $type[$ship->type] }}</p>
+                    <ul class="list-group">
+                        @forelse($ship->getCargos as $cargo)
+                        <li class="list-group-item">
+                            <div class="posts-list">
+                                <div class="content">
+                                   <h4> {{$cargo->title}} </h4>
+                                </div>
+                            </div>
+                        </li>
+                    @empty
+                        <li class="list-group-item">No cargos found</li>
+                    @endforelse
+                    </ul>
                     <div class="buttons mb-2">
                         <a href="{{ route('ship_edit', $ship) }}" type="button" class="btn btn-secondary">Edit</a>
                         <form action="{{ route('ship_delete', $ship) }}" method="post">
@@ -19,10 +31,6 @@
                         </form>
                     </div>
                 </div>
-            @empty
-                <p class="description">There are no ships in a dock.</p>
-            @endforelse
-
         </div>
     </div>
 @endsection

@@ -15,6 +15,13 @@
                         <span class="input-group-text">Country of registration</span>
                         <input value="{{ old('country') }}" type="text" class="form-control" name="country">
                     </div>
+                    <select class="form-select" name="type">
+                        <option value="0" selected>Select type of boat</option>
+                        <option value="1">Passenger</option>
+                        <option value="2">Container</option>
+                        <option value="3">Cruise</option>
+                        <option value="3">Fishing</option>
+                      </select>
                     <button type="submit" class="btn btn-primary mt-4">Create</button>
                 </form>
             </div>

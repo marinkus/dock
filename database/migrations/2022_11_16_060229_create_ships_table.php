@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 25);
             $table->string('country', 25);
-            $table->unsignedTinyInteger('type');
+            $table->unsignedTinyInteger('type')->default(1);
             $table->timestamps();
         });
     }
