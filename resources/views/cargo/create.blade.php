@@ -17,12 +17,7 @@
                     </div>
                     <div class="mb-3">
                         <span class="input-group-text">Type</span>
-                        <select value="{{ old('type') }}" name="type" class="form-select">
-                            <option selected value="0">Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <input value="{{ old('Type') }}" type="text" class="form-control" name="type">
                     </div>
                     <div class="mb-3">
                         <span class="input-group-text">Ship</span>

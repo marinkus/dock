@@ -7,8 +7,8 @@
             @forelse($ships as $ship)
                 <div class="col-3 form-div mt-2">
                     <h3 class="heading"><a href="{{ route('ship_show', $ship) }}">{{ $ship->title }}</a></h3>
-                    <p class="description">Country of registration{{ $ship->country }}</p>
-                    <p>Registered at: {{ $ship->created_at }}</p>
+                    <p class="description">Country of registration: {{ $ship->country }}</p>
+                    {{-- <p>Registered at: {{ $ship->created_at }}</p> --}}
                     <p>Type: {{ $type[$ship->type] }}</p>
                     <div class="buttons mb-2">
                         <a href="{{ route('ship_edit', $ship) }}" type="button" class="btn btn-secondary">Edit</a>

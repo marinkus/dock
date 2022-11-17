@@ -4,13 +4,14 @@
     <div class="container">
         <div class="row">
 
-            @forelse($cargos as $cargo)
                 <div class="col-3 form-div mt-2">
                     <h3 class="heading">{{ $cargo->title }}</h3>
                     <p class="description">Type: {{ $cargo->type }}</p>
                     <p class="description">Client: {{ $cargo->client }}</p>
-                    @if ($cargo->image)
-                        <img src="{{ $cargo->image }}" alt="">
+                    <p class="description">Ship: {{ $cargo->getShip->title }}</p>
+                    @if ($cargo->image) {
+                        <img src="{{$cargo->image}}" alt="">
+                    }
                     @else
                         <p class="description">### No photo ###</p>
                     @endif
@@ -23,9 +24,6 @@
                         </form>
                     </div>
                 </div>
-            @empty
-                <p class="description">There are no cargos.</p>
-            @endforelse
 
         </div>
     </div>

@@ -9,4 +9,9 @@ class Cargo extends Model
 {
     use HasFactory;
 
+    public function getShip()
+    {
+        return $this->belongsTo(Ship::class, 'ship_id', 'id');
+    }
+
 }
